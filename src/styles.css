@@ -1,0 +1,43 @@
+
+
+html, body { height: 100%; background-color: #F7FFF8; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } 
+
+* {
+    font-family: 'Courier New', Courier, monospace;
+  }
+  table {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+  }
+ 
+  th.pos {
+    text-align: right;
+  }
+  
+  table,
+  th,
+  td {
+    border: 3px solid #CEFFD0;
+    border-collapse: collapse;
+  }
+  
+  th {
+    background-color: #E0EDE1;
+    color: #688E6A;
+  }
+  
+  td {
+    background-color: #F2FFF3;
+  }
+  
+  button {
+    background-color: rgb(247, 181, 241);
+    font-size: 15px;
+    border-radius: 80px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    border-color: rgb(97, 1, 81);
+    border-width: 3px;
+    border-collapse: separate;
+  } 

@@ -1,0 +1,11 @@
+#carlos {
+    position: relative;
+    width: 200px;
+    height: 400px;
+}
+
+#text {
+    position: relative;
+    left: 250px;
+    bottom: 380px;
+}
