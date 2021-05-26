@@ -67,11 +67,7 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "frontend:build",
-            "allowedCommonJsDependencies": [
-              "lodash",
-              "highcharts"
-              ]
+            "browserTarget": "frontend:build"
           },
           "configurations": {
             "production": {
