@@ -1,12 +1,13 @@
 
 <div class="row">
-
+  
   <!-- FORM -->
   <div class="col-md-4">
+    <br><br>
     <div class="admm">
     <div class="card">
       <div class="card-body p-4">
-        
+       
 
         <!-- FORM -->
         <form #empresaForm="ngForm" (ngSubmit)="addEmpresa(empresaForm)">
@@ -65,15 +66,17 @@
 <!--  -->
 
 <!-- TABLE -->
+
 <div class="col-md-8">
+  <br><br>
   <div class="form-group">
-    <p> Descripcion: 
+    <p> Nombre: 
       <input
       type="text"
       class="forms-control"
       placeholder="Buscar..."
-      [(ngModel)]="filterpost"
-      name="filterpost"
+      [(ngModel)]="filterposttt"
+      name="filterposttt"
       />
     </p>
   </div>
@@ -96,7 +99,7 @@
   
   
     <tbody>
-      <tr *ngFor="let empresa of empresaService.empresas | filter: filterpost">
+      <tr *ngFor="let empresa of empresaService.empresas | filt: filterposttt">
         <td>{{ empresa.name }}</td>
         <td>{{ empresa.descripcion }}</td>
         <td>{{ empresa.direccion }}</td>

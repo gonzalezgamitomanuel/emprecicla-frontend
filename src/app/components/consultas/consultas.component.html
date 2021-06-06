@@ -1,6 +1,9 @@
 <div class="col-md-8">
 
+  <br><br>
   <form (ngSubmit)="onSubmit()">
+
+
     <label for="pais"
       >Pais:  
       <select
@@ -16,8 +19,28 @@
           >{{pais}}
         </option>
       </select>
+      &nbsp;
     </label>
-    ------------
+
+    <!-- <label for="localidad"
+      >Localidad:  
+      <select
+        type="text"
+        id="localidad"
+        required
+        [(ngModel)]="selectt"
+        name="localidad"
+        (ngModelChange)="onSubmit()"
+        #contam="ngModel"
+      >
+        <option *ngFor="let localidad of localidads" [value]="localidad"
+          >{{localidad}}
+        </option>
+      </select>
+    </label> -->
+
+
+    <img src="..\..\..\assets\flecha.png" width="80px">&nbsp;
     <a (click)="irMapaGrupo()" class="btn btn-secondary btn-sm">
       <i class="material-icons">map</i>
     </a><br>
@@ -36,8 +59,24 @@
 
         
       </p>
+      <p> Localidad: 
+        <input
+        type="text"
+        class="forms-control"
+        placeholder="Buscar..."
+        [(ngModel)]="filterpostt"
+        name="filterpostt"
+        />
+
+        
+      </p>
       
     </div>
+
+    
+      
+      
+    
     
     <table class="table table-striped">
       <thead>
@@ -51,7 +90,7 @@
         <th>Mapa</th>
       </thead>
       <tbody>
-        <tr *ngFor="let empresa of empresaService.empresas | filter: filterpost">
+        <tr *ngFor="let empresa of empresaService.empresas | filter: filterpost | filtr: filterpostt">
           <td>{{ empresa.name }}</td>
           <td>{{ empresa.descripcion }}</td>
           <td>{{ empresa.direccion }}</td>

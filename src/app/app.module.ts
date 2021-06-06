@@ -19,6 +19,18 @@ import { ConsultasComponent } from './components/consultas/consultas.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FiltroPipe } from './pipes/filtro.pipe';
 import { MapagrupoComponent } from './components/mapagrupo/mapagrupo.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { UsuarioComponent } from './components/usuario/usuario.component';
+import { SignindosComponent } from './components/signindos/signindos.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { FiltrPipe } from './pipes/filtr.pipe';
+import { FiltPipe } from './pipes/filt.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -31,14 +43,24 @@ import { MapagrupoComponent } from './components/mapagrupo/mapagrupo.component';
     MapComponent,
     ConsultasComponent,
     FiltroPipe,
-    MapagrupoComponent
+    MapagrupoComponent,
+    UsuarioComponent,
+    SignindosComponent,
+    FiltrPipe,
+    FiltPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule,
+    FlexLayoutModule
   ],
   providers: [
     AuthGuard,

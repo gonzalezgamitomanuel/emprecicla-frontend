@@ -9,6 +9,8 @@ import { EmpresaComponent } from './components/empresa/empresa.component';
 import { MapComponent } from './components/map/map.component';
 import { MapagrupoComponent } from './components/mapagrupo/mapagrupo.component';
 import { ConsultasComponent } from './components/consultas/consultas.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
+import { SignindosComponent } from './components/signindos/signindos.component';
 
 import { AuthGuard } from './auth.guard';
 
@@ -51,6 +53,14 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'signindos',
+    component: SignindosComponent
+  },
+  {
+    path: 'usuario',
+    component: UsuarioComponent
   }
 ];
 

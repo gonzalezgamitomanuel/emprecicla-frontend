@@ -14,28 +14,66 @@ import { Router } from '@angular/router';
 export class ConsultasComponent implements OnInit {
 
  filterpost = '';
+ filterpostt = '';
 
-  paiss: Array<String> = ["España", "Grecia", "Bulgaria"];
-  select: string = "España";
+  // paiss: Array<String> = ["España", "Grecia", "Bulgaria"];
+  // select: string = "España";
+
+  paiss: Array<Empresa> = [];
+  empresas = null;
+  select: string = "";
+
+  localidads: Array<Empresa> = [];
+  empresass = null ;
+  selectt: string = "";
 
   constructor(private empresaService: EmpresaService, private router: Router) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.getPaises();
+    await this.getLocalidades();
     this.getEmpresas();
+    // await this.getEmpresass();
   }
 
-  // getEmpresas() {
-  //   this.empresaService.getEmpresas().subscribe((res) => {
-  //     this.empresaService.empresas = res;
-  //     console.log(this.empresaService.empresas)
-  //   });
-  // }
-
-  getEmpresas() {
-    this.empresaService.getEmpresasFilter(this.select).subscribe((res) => {
-          this.empresaService.empresas = res;
+  async getPaises() {
+    await this.empresaService.getEmpresasDistinct().then(paiss => {
+      console.log(paiss)
+      this.empresas = paiss;
+      this.select = this.empresas[0].pais
+      for (let empresa of this.empresas) {
+          this.select = empresa.pais 
+          empresa.pais
+          this.paiss.push(empresa.pais);
+      }
     });
   }
+
+  async getLocalidades() {
+    await this.empresaService.getEmpresasDistinctdos().then(localidads => {
+      console.log(localidads)
+      this.empresass = localidads;
+      this.selectt = this.empresass[0].localidad
+      for (let empre of this.empresass) {
+          this.selectt = empre.pais 
+          empre.pais
+          this.localidads.push(empre.localidad);
+      }
+    });
+  }
+
+  async getEmpresas() {
+    await this.empresaService.getEmpresasFilter(this.select).then((res) => {
+          this.empresaService.empresas = res;
+    });
+    
+  }
+  // async getEmpresass() {
+  //   await this.empresaService.getEmpresasFilter(this.selectt).then((res) => {
+  //         this.empresaService.empresas = res;
+  //   });
+    
+  // }
 
   irMapa(empresa: Empresa){
     // Para almacenar un objeto hay que pasarlo a json
@@ -52,6 +90,7 @@ export class ConsultasComponent implements OnInit {
 
   onSubmit() {
     this.getEmpresas();
+    // this.getEmpresass();
   }
 
 }

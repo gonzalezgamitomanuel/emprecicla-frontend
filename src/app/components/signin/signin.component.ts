@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service'
-import { Router } from '@angular/router'
+import { Router } from '@angular/router';
+// import { User } from '../../models/User';
 
 @Component({
   selector: 'app-signin',
@@ -9,6 +10,7 @@ import { Router } from '@angular/router'
 })
 export class SigninComponent implements OnInit {
   user = {};
+  // users: Array<User> = [];
 
   constructor(
     private authService: AuthService,

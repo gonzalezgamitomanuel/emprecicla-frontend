@@ -6,7 +6,7 @@ import {HttpClient} from '@angular/common/http'
 })
 export class TaskService {
 
-  private URL = 'https://emprecicla-backend.herokuapp.com/api';
+  private URL = 'http://localhost:4000/api';
   constructor(private http: HttpClient) { }
 
   getTasks() {

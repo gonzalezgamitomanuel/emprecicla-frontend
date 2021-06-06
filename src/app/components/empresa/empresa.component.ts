@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   providers: [EmpresaService],
 })
 export class EmpresaComponent implements OnInit {
-  filterpost = '';
+  filterposttt = '';
   constructor(private empresaService: EmpresaService, private router: Router) {}
 
   ngOnInit() {
@@ -34,9 +34,8 @@ export class EmpresaComponent implements OnInit {
   }
 
   getEmpresas() {
-    this.empresaService.getEmpresas().subscribe((res) => {
+    this.empresaService.getEmpresas().then((res) => {
       this.empresaService.empresas = res;
-      console.log(this.empresaService.empresas)
     });
   }
 

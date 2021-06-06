@@ -1,6 +1,6 @@
 
 
-html, body { height: 100%; background-color: #F7FFF8; }
+html, body { height: 100%; background-color: #ffffff; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } 
 
 * {
@@ -18,17 +18,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   table,
   th,
   td {
-    border: 3px solid #CEFFD0;
+    border: 3px solid #0645FD;
     border-collapse: collapse;
   }
   
   th {
-    background-color: #E0EDE1;
-    color: #688E6A;
+    background-color: #A9BEFC;
+    color: #255BFF;
   }
   
   td {
-    background-color: #F2FFF3;
+    background-color: #D4DFFF;
   }
   
   button {
@@ -41,3 +41,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-width: 3px;
     border-collapse: separate;
   } 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

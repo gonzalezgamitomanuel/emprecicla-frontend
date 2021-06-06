@@ -7,15 +7,23 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private URL = 'https://emprecicla-backend.herokuapp.com/api';
+  private URL = 'http://localhost:4000/api';
   constructor(private http: HttpClient, private router: Router) { }
 
   signUpUser(user) {
     return this.http.post<any>(this.URL + '/signup', user);
   }
 
+  signUpAdmin(admin) {
+    return this.http.post<any>(this.URL + '/signupdos', admin);
+  }
+
   signInUser(user) {
     return this.http.post<any>(this.URL + '/signin', user);
+  }
+
+  signInAdmin(admin) {
+    return this.http.post<any>(this.URL + '/signindos', admin);
   }
 
   loggedIn() {

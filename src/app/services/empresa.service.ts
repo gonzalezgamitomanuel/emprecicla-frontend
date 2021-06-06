@@ -9,7 +9,7 @@ import { Empresa } from "../models/empresa";
 export class EmpresaService {
   selectedEmpresa: Empresa;
   empresas: Empresa[];
-  readonly URL_API = "https://emprecicla-backend.herokuapp.com/api/empr";
+  readonly URL_API = "http://localhost:4000/api/empr";
 
   constructor(private http: HttpClient) {
     console.log("construyo")
@@ -20,14 +20,30 @@ export class EmpresaService {
     return this.http.post(this.URL_API, empresa);
   }
 
-  getEmpresas() {
-    const v = this.http.get<Empresa[]>(this.URL_API);
-    console.log(v)
+  async getEmpresas() {
+    const v = await this.http.get<Empresa[]>(this.URL_API).toPromise();
     return v
   }
 
-  getEmpresasFilter(pais: string) {
-    return this.http.get<Empresa[]>(this.URL_API + `/filter/${pais}`);
+  async getEmpresasDistinct() {
+    const v = await this.http.get<Empresa[]>(this.URL_API + `/distinct`).toPromise();
+    console.log(v);
+    return v
+  }
+
+  async getEmpresasDistinctdos() {
+    const v = await this.http.get<Empresa[]>(this.URL_API + `/distinctdos`).toPromise();
+    console.log(v);
+    return v
+  }
+
+
+  async getEmpresasFilter(pais: string) {
+    return await this.http.get<Empresa[]>(this.URL_API + `/filter/${pais}`).toPromise();
+  }
+
+  async getEmpresasFilterdos(localidad: string) {
+    return await this.http.get<Empresa[]>(this.URL_API + `/filterdos/${localidad}`).toPromise();
   }
 
   putEmpresa(empresa: Empresa) {

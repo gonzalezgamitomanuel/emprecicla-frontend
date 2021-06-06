@@ -1,8 +1,8 @@
 .map-container {
     position: absolute;
-    top: 140px;
-    left: 140px;
-    right: 140px;
+    top: 30px;
+    left: 30px;
+    right: 30px;
     bottom: 0;
     margin: 30px;
   }
