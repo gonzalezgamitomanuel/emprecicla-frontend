@@ -9,7 +9,7 @@ import { User } from "../models/User";
 export class UserService {
   selectedUser: User;
   users: User[];
-  readonly URL_API = "http://localhost:4000/api/usr";
+  readonly URL_API = "https://empreciclas-backend.herokuapp.com/api/usr";
 
   constructor(private http: HttpClient) {
     console.log("construyo")

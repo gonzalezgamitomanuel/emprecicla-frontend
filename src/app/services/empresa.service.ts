@@ -9,7 +9,7 @@ import { Empresa } from "../models/empresa";
 export class EmpresaService {
   selectedEmpresa: Empresa;
   empresas: Empresa[];
-  readonly URL_API = "http://localhost:4000/api/empr";
+  readonly URL_API = "https://empreciclas-backend.herokuapp.com/api/empr";
 
   constructor(private http: HttpClient) {
     console.log("construyo")
